@@ -62,7 +62,6 @@ namespace LinkedListSolution
             }
             return count;
         }
-        //UC-4
         public Node InsertAtParticularPosition(int position, int data)
         {
             Node newNode = new Node(data);
@@ -88,6 +87,15 @@ namespace LinkedListSolution
             newNode.next = prev.next;
             prev.next = newNode;
             return this.head;
+        }
+        internal Node RemoveFirstNode()
+        {
+            if (this.head == null)
+            {
+                return null;
+            }
+            this.head = this.head.next;
+            return head;
         }
     }
 }

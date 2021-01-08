@@ -27,6 +27,10 @@ namespace LinkedListSolution
                 Console.WriteLine("List after inserting 30 between 56 and 70");
             }
             linkedListOperations1.DisplayLinkedList();
+
+            linkedListOperations1.RemoveFirstNode();
+            Console.WriteLine("List after Deleting from first Position");
+            linkedListOperations1.DisplayLinkedList();
         }
     }
 }
