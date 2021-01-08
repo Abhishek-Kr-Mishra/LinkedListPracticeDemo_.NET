@@ -97,5 +97,23 @@ namespace LinkedListSolution
             this.head = this.head.next;
             return head;
         }
+        public Node RemoveLastNode()
+        {
+            if (this.head == null)
+            {
+                return null;
+            }
+            if (this.head.next == null)
+            {
+                return null;
+            }
+            Node newNode = head;
+            while (newNode.next.next != null)
+            {
+                newNode = newNode.next;
+            }
+            newNode.next = null;
+            return head;
+        }
     }
 }

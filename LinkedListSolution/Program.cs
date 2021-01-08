@@ -29,8 +29,12 @@ namespace LinkedListSolution
             linkedListOperations1.DisplayLinkedList();
 
             linkedListOperations1.RemoveFirstNode();
-            Console.WriteLine("List after Deleting from first Position");
+            Console.WriteLine("First List after Deleting Node from first Position");
             linkedListOperations1.DisplayLinkedList();
+
+            linkedListOperations2.RemoveLastNode();
+            Console.WriteLine("Second List after Deleting Node from Last Position");
+            linkedListOperations2.DisplayLinkedList();
         }
     }
 }
