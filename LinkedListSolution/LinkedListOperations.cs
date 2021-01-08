@@ -10,16 +10,8 @@ namespace LinkedListSolution
         public void AddAtHead(int data)
         {
             Node node = new Node(data);
-            //if (head == null)
-            //{
-            //    this.head = node;
-            //    node.next = null;
-            //}
-            //else
-            //{
                 node.next = head;
                 head = node;
-            //}
             Console.WriteLine("{0} added to the first Position of linked list ", node.data);
         }
         public void AddAtLast(int data)
@@ -54,6 +46,48 @@ namespace LinkedListSolution
                 temp = temp.next;
             }
             Console.WriteLine();
+        }
+        public int Search(int value)
+        {
+            Node node = this.head;
+            int count = 0;
+            while (node != null)
+            {
+                if (node.data == value)
+                {
+                    return count;
+                }
+                node = node.next;
+                count++;
+            }
+            return count;
+        }
+        //UC-4
+        public Node InsertAtParticularPosition(int position, int data)
+        {
+            Node newNode = new Node(data);
+            if (this.head == null)
+            {
+                return newNode;
+            }
+            if (position == 0)
+            {
+                newNode.next = this.head;
+                this.head = newNode;
+                return this.head;
+            }
+            Node prev = null;
+            Node current = this.head;
+            int count = 0;
+            while (current != null && count < position)
+            {
+                prev = current;
+                current = current.next;
+                count++;
+            }
+            newNode.next = prev.next;
+            prev.next = newNode;
+            return this.head;
         }
     }
 }
