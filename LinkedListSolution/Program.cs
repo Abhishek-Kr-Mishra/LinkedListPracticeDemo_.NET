@@ -7,15 +7,13 @@ namespace LinkedListSolution
     {
         static void Main(string[] args)
         {
-            LinkedList<int> linkedList = new LinkedList<int>();
-            linkedList.AddLast(56);
-            linkedList.AddLast(30);
-            linkedList.AddLast(70);
+            LinkedListOperations linkedListOperatins = new LinkedListOperations();
 
-            foreach(int value in linkedList)
-            {
-                Console.Write(value + " ");
-            }
+            linkedListOperatins.AddAtHead(56);
+            linkedListOperatins.AddAtHead(30);
+            linkedListOperatins.AddAtHead(70);
+
+            linkedListOperatins.DisplayLinkedList();
         }
     }
 }
