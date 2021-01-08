@@ -10,6 +10,21 @@ namespace LinkedListSolution
         public void AddAtHead(int data)
         {
             Node node = new Node(data);
+            //if (head == null)
+            //{
+            //    this.head = node;
+            //    node.next = null;
+            //}
+            //else
+            //{
+                node.next = head;
+                head = node;
+            //}
+            Console.WriteLine("{0} added to the first Position of linked list ", node.data);
+        }
+        public void AddAtLast(int data)
+        {
+            Node node = new Node(data);
             if (head == null)
             {
                 this.head = node;
@@ -17,9 +32,13 @@ namespace LinkedListSolution
             else
             {
                 Node temp = head;
-                head = temp.next;
+                while (temp.next != null)
+                {
+                    temp = temp.next;
+                }
+                temp.next = node;
             }
-            Console.WriteLine("{0} added to the linked list ", node.data);
+            Console.WriteLine("{0} added to the last position of linked list ", node.data);
         }
         public void DisplayLinkedList()
         {

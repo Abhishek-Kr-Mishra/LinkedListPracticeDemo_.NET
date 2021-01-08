@@ -7,13 +7,18 @@ namespace LinkedListSolution
     {
         static void Main(string[] args)
         {
-            LinkedListOperations linkedListOperatins = new LinkedListOperations();
+            LinkedListOperations linkedListOperations1 = new LinkedListOperations();
+            LinkedListOperations linkedListOperations2 = new LinkedListOperations();
 
-            linkedListOperatins.AddAtHead(56);
-            linkedListOperatins.AddAtHead(30);
-            linkedListOperatins.AddAtHead(70);
+            linkedListOperations1.AddAtHead(70);
+            linkedListOperations1.AddAtHead(30);
+            linkedListOperations1.AddAtHead(56);
+            linkedListOperations1.DisplayLinkedList();
 
-            linkedListOperatins.DisplayLinkedList();
+            linkedListOperations2.AddAtLast(56);
+            linkedListOperations2.AddAtLast(30);
+            linkedListOperations2.AddAtLast(70);
+            linkedListOperations2.DisplayLinkedList();
         }
     }
 }
