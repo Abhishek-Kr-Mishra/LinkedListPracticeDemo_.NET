@@ -6,12 +6,12 @@ namespace LinkedListSolution
 {
     public class LinkedListOperations
     {
-        public Node head;
+        public static Node head;
         public void AddAtHead(int data)
         {
             Node node = new Node(data);
-                node.next = head;
-                head = node;
+            node.next = head;
+            head = node;
             Console.WriteLine("{0} added to the first Position of linked list ", node.data);
         }
         public void AddAtLast(int data)
@@ -19,7 +19,7 @@ namespace LinkedListSolution
             Node node = new Node(data);
             if (head == null)
             {
-                this.head = node;
+                head = node;
             }
             else
             {
@@ -34,7 +34,7 @@ namespace LinkedListSolution
         }
         public void DisplayLinkedList()
         {
-            Node temp = this.head;
+            Node temp = head;
             if (temp == null)
             {
                 Console.WriteLine("Linked List is empty ");
@@ -47,9 +47,9 @@ namespace LinkedListSolution
             }
             Console.WriteLine();
         }
-        public int Search(int value)
+        public static int Search(int value)
         {
-            Node node = this.head;
+            Node node = head;
             int count = 0;
             while (node != null)
             {
@@ -65,18 +65,18 @@ namespace LinkedListSolution
         public Node InsertAtParticularPosition(int position, int data)
         {
             Node newNode = new Node(data);
-            if (this.head == null)
+            if (head == null)
             {
                 return newNode;
             }
             if (position == 0)
             {
-                newNode.next = this.head;
-                this.head = newNode;
-                return this.head;
+                newNode.next = head;
+                head = newNode;
+                return head;
             }
             Node prev = null;
-            Node current = this.head;
+            Node current = head;
             int count = 0;
             while (current != null && count < position)
             {
@@ -86,24 +86,24 @@ namespace LinkedListSolution
             }
             newNode.next = prev.next;
             prev.next = newNode;
-            return this.head;
+            return head;
         }
         internal Node RemoveFirstNode()
         {
-            if (this.head == null)
+            if (head == null)
             {
                 return null;
             }
-            this.head = this.head.next;
+            head = head.next;
             return head;
         }
         public Node RemoveLastNode()
         {
-            if (this.head == null)
+            if (head == null)
             {
                 return null;
             }
-            if (this.head.next == null)
+            if (head.next == null)
             {
                 return null;
             }
@@ -113,6 +113,33 @@ namespace LinkedListSolution
                 newNode = newNode.next;
             }
             newNode.next = null;
+            return head;
+        }
+        public int Size()
+        {
+            Node temp = head;
+            int count = 0;
+            while (temp != null)
+            {
+                temp = temp.next;
+                count++;
+            }
+            return count;
+        }
+        public Node DeleteNodeByValue(int value)
+        {
+            Node prev = null;
+            Node current = head;
+            int position = Search(value);
+            int count = 0;
+            while (current != null && count < position)
+            {
+                prev = current;
+                current = current.next;
+                count++;
+            }
+            prev.next = current.next;
+            current.next = null;
             return head;
         }
     }

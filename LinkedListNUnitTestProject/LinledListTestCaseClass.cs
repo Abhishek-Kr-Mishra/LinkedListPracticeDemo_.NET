@@ -15,7 +15,7 @@ namespace LinkedListNUnitTestProject
         {
             LinkedListOperations linkedListOperations = new LinkedListOperations();
             linkedListOperations.AddAtHead(56); linkedListOperations.AddAtHead(30); linkedListOperations.AddAtHead(70);
-            int searchOutput = linkedListOperations.Search(30);
+            int searchOutput = LinkedListOperations.Search(30);
             Assert.AreEqual(1, searchOutput);
         }
         [Test]
@@ -26,10 +26,10 @@ namespace LinkedListNUnitTestProject
             list1.AddAtHead(56); list1.AddAtHead(30); list1.AddAtHead(40); list1.AddAtHead(70);
             LinkedListOperations list2 = new LinkedListOperations();
             list2.AddAtHead(56); list2.AddAtHead(30); list2.AddAtHead(70);
-            int searchOutput = list2.Search(30);
+            int searchOutput = LinkedListOperations.Search(30);
             list2.InsertAtParticularPosition(searchOutput + 1, 40);
-            Node temp1 = list1.head;
-            Node temp2 = list2.head;
+            Node temp1 = LinkedListOperations.head;
+            Node temp2 = LinkedListOperations.head;
             while (temp1 != null)
             {
                 temp1 = temp1.next;
@@ -42,6 +42,14 @@ namespace LinkedListNUnitTestProject
             }
             Assert.AreEqual(list1Count, list2Count);
         }
-
+        [Test]
+        public void GivenParticularValue_WhenDeleteFromLinkedList_ShouldReturnTheListSize()
+        {
+            LinkedListOperations list = new LinkedListOperations();
+            list.AddAtLast(56); list.AddAtLast(30); list.AddAtLast(40); list.AddAtLast(70);
+            list.DeleteNodeByValue(40);
+            int expected = 3;
+            Assert.AreEqual(expected,list.Size());
+        }
     }
 }
