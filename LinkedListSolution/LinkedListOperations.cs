@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LinkedListSolution
 {
-    class LinkedListOperations
+    public class LinkedListOperations
     {
         public Node head;
         public void AddAtHead(int data)
