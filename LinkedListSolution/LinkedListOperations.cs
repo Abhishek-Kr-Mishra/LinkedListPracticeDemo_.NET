@@ -6,7 +6,7 @@ namespace LinkedListSolution
 {
     public class LinkedListOperations
     {
-        public static Node head;
+        public Node head;
         public void AddAtHead(int data)
         {
             Node node = new Node(data);
@@ -47,7 +47,7 @@ namespace LinkedListSolution
             }
             Console.WriteLine();
         }
-        public static int Search(int value)
+        public int Search(int value)
         {
             Node node = head;
             int count = 0;
@@ -126,11 +126,11 @@ namespace LinkedListSolution
             }
             return count;
         }
-        public Node DeleteNodeByValue(int value)
+        public Node DeleteNodeByValue(int value,int position)
         {
             Node prev = null;
             Node current = head;
-            int position = Search(value);
+            //int position = Search(value);
             int count = 0;
             while (current != null && count < position)
             {

@@ -19,8 +19,8 @@ namespace LinkedListSolution
             linkedListOperations2.AddAtLast(70);
             linkedListOperations2.DisplayLinkedList();
 
-            int positionOf56th = LinkedListOperations.Search(56);
-            int positionOf70th = LinkedListOperations.Search(70);
+            int positionOf56th = linkedListOperations1.Search(56);
+            int positionOf70th = linkedListOperations1.Search(70);
             if ((positionOf70th - positionOf56th) == 1)
             {
                 linkedListOperations1.InsertAtParticularPosition(positionOf56th + 1, 30);
