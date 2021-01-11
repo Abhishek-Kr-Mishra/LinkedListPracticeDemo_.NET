@@ -35,6 +35,19 @@ namespace LinkedListSolution
             linkedListOperations2.RemoveLastNode();
             Console.WriteLine("Second List after Deleting Node from Last Position");
             linkedListOperations2.DisplayLinkedList();
+
+            SortingList<int> sortingList = new SortingList<int>();
+            sortingList.AddNode(56);
+            sortingList.AddNode(30);
+            sortingList.AddNode(40);
+            sortingList.AddNode(70);
+
+            Console.WriteLine("Original List ");
+            sortingList.DisplaySort();
+            sortingList.SortOrderedList();
+            Console.WriteLine("Sorted List ");
+            sortingList.DisplaySort();
+
         }
     }
 }
